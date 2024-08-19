@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Boda</title>
+    <!-- Importar Google Fonts para las tipografías aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Dancing+Script:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Estilos CSS -->
+    <style>
+        body {
+            font-family: 'Dancing Script', cursive;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        h1 {
+            font-family: 'Pinyon Script', cursive;
+            font-size: 164px;
+            text-align: center;
+            margin-top: 150px;
+            color: #a29bfe;
+        }
+        .content-section {
+            padding: 50px;
+            background-color: #ffffff;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            font-size: 24px; /* Aumentar el tamaño de la fuente */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .content-section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .photo {
+            text-align: center;
+        }
+        .photo img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+        .photo img.hidden {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>¡Nos Casamos!</h1>
+
+    <div class="content-section">
+        <p>Queridos amigos y familiares,</p>
+        <p>Estamos emocionados de invitarlos a nuestra boda por la iglesia.</p>
+        <p>Fecha: 23 de noviembre de 2024</p>
+        <p>Ubicación: Finca Bonanza: Av. de las Torres, Xochimilco, 16248 Ciudad de México, CDMX.</p>
+    </div>
+
+    <!-- Aquí se pueden añadir 10 fotos -->
+    <div class="content-section photo">
+        <img src="C:\Users\eandr\Desktop\Invitacion\A. FOTOS\IMG_6320.JPG" alt="Foto 1">
+    </div>
+    <div class="content-section photo">
+        <img src="C:\Users\eandr\Desktop\Invitacion\A. FOTOS\IMG_6266.JPG" alt="Foto 2">
+    </div>
+    <div class="content-section photo">
+        <img src="C:\Users\eandr\Desktop\Invitacion\A. FOTOS\IMG_6339.JPG" alt="Foto 3">
+    </div>
+    <div class="content-section photo">
+        <img src="C:\Users\eandr\Desktop\Invitacion\A. FOTOS\IMG_6324.JPG" alt="Foto 4">
+    </div>
+    <div class="content-section photo">
+        <img src="C:\Users\eandr\Desktop\Invitacion\A. FOTOS\IMG_6317.JPG" alt="Foto 5">
+    </div>
+    <div class="content-section photo">
+        <img src="C:\Users\eandr\Desktop\Invitacion\A. FOTOS\IMG_6293.JPG" alt="Foto 6">
+    </div>
+    <div class="content-section photo">
+        <img src="C:\Users\eandr\Desktop\Invitacion\A. FOTOS\IMG_6274.JPG" alt="Foto 7">
+    </div>
+    <div class="content-section photo">
+        <img src="C:\Users\eandr\Desktop\Invitacion\A. FOTOS\IMG_6314.JPG" alt="Foto 8">
+    </div>
+    <div class="content-section photo">
+        <img src="C:\Users\eandr\Desktop\Invitacion\A. FOTOS\IMG_6258.JPG" alt="Foto 9">
+    </div>
+    <div class="content-section photo">
+        <img src="C:\Users\eandr\Desktop\Invitacion\A. FOTOS\IMG_6263.JPG" alt="Foto 10">
+    </div>
+
+    <div class="content-section">
+            <p>Queridos amigos y familiares,</p>
+    <p>
+        Con la bendición de Dios, hemos decidido unir nuestras vidas en sagrado matrimonio. Nos sentimos profundamente agradecidos por el amor que hemos compartido y por la guía divina que nos ha conducido hasta este momento tan especial.
+    </p>
+    <p>
+        En cada paso de nuestro camino juntos, hemos sentido la presencia de Dios, fortaleciendo nuestro vínculo y llenándonos de una alegría que solo el amor verdadero puede brindar. El amor es paciente, el amor es bondadoso, y en él encontramos la fortaleza para enfrentar cada día con fe y esperanza.
+    </p>
+    <p>
+        Hoy, rodeados de aquellos que más amamos, queremos celebrar este regalo divino y compartir nuestra felicidad con todos ustedes. Que esta unión sea un reflejo del amor eterno de Dios y una muestra de la belleza de la vida que Él nos ha dado.
+    </p>
+    <p>
+        "El amor no es sólo un sentimiento, es una fuerza que nos une, que nos eleva, y que nos recuerda que en el misterio del universo, somos mucho más de lo que creemos ser."
+    </p>
+    <p>Con todo nuestro cariño,</p>
+    <p>Elvis y Sarahí</p>
+    </div>
+
+    <!-- JavaScript para las transiciones -->
+    <script>
+        document.addEventListener("scroll", function() {
+            const sections = document.querySelectorAll('.content-section');
+            const photos = document.querySelectorAll('.photo img');
+            const triggerPoint = window.innerHeight / 5 * 4;
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < triggerPoint) {
+                    section.classList.add('show');
+                }
+            });
+
+            photos.forEach(photo => {
+                const photoTop = photo.getBoundingClientRect().top;
+                if (photoTop > triggerPoint) {
+                    photo.classList.add('hidden');
+                } else {
+                    photo.classList.remove('hidden');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
